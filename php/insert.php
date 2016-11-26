@@ -4,14 +4,10 @@ try {
 } catch (Exception $e) {
 	die('Database access error : ' . $e->getMessage());
 }
-	
-$sql=$bdd->query("INSERT INTO gf_feedback (first_name, last_name,str_comment,imp_comment,free_comment) VALUES ('$_POST[firstname]','$_POST[lastname]','$_POST[strenghts-comments]','$_POST[improvement-comments]','$_POST[free-comments]')");
-
-if (!mysql_query($sql,$bdd))
-  {
-  die('Error: ' . mysql_error());
-  }
+$req = $bdd->prepare("INSERT INTO gf_feedback (name,str_comment,imp_comment,free_comment) VALUES (:name,:str,:imp,:free)");
+$req->execute(array(':name' => $_POST['name'],':str' => $_POST['strenghts-comments'],':imp' => $_POST['improvement-comments'],':free' => $_POST['free-comments']));
 echo "1";
- 
-mysql_close($bdd)
 ?>
+
+
+
