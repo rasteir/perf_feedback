@@ -10,9 +10,13 @@ try {
 } catch (Exception $e) {
 	die('Database access error : ' . $e->getMessage());
 }
-$req = $bdd->prepare("INSERT INTO gf_feedback (name,str_comment,imp_comment,free_comment) VALUES (:name,:str,:imp,:free)");
-$req->execute(array(':name' => $_POST['name'],':str' => $_POST['strenghts-comments'],':imp' => $_POST['improvement-comments'],':free' => $_POST['free-comments']));
-echo "1";
+if(isset($_GET['name'])) {
+	$req = $bdd->prepare("SELECT str_comment, imp_comment,free_comment FROM gf_feedback WHERE name=?");
+	$req->execute(array($_GET['name']));
+	$res = $req->fetchAll(PDO::FETCH_ASSOC);
+	$json=json_encode($res);
+	echo $json;
+}
 ?>
 
 
