@@ -45,7 +45,7 @@
 			<div class="row">
 				<form class="form-horizontal top-gap" method="post" action="php/insert.php">
 					<h4 class="gap-bottom"><span class="underline">Looking for your feedback?</span></h4>
-					<p class="col-xs-12"><strong>Name:</strong>
+					<p class="col-xs-12"><strong>Your Name:</strong>
 					</p>
 					<div class="form-group gap-bottom">
 						<div class="col-xs-9">
@@ -53,24 +53,27 @@
 						</div>
 					</div>
 					<!-- Search -->
-					<div class="form-group gap-bottom">
+					<div class="form-group">
 						<div class="col-xs-12">
 							<button type="search" name="search" class="btn btn-default sborder" id="search"><strong>Search Feedback</strong></button>
 						</div>
 					</div>
 					<!-- Action Res  -->
-					<div class="row">
-						<div id="res" class="col-xs-12">
+					<div id="divprint">
+						<div class="row">
+							<div id="res" class="col-xs-12"></div>
 						</div>
-					</div>
-					<!-- Strengths -->
-					<div id="resStr"></div>
-						<table id="tabStr"></table>
-					<!-- Improvement -->
-					<div id="resImp">
-					</div>
-					<!-- Comments -->
-					<div id="resCom">
+						<!-- Strengths -->
+						<div id="resStr"></div>
+						<table id="tabStr" class="gap-bottom"></table>
+						<!-- Improvement -->
+						<div id="resImp"></div>
+						<table id="tabImp" class="gap-bottom"></table>
+						<!-- Comments -->
+						<div id="resCom"></div>
+						<table id="tabCom" class="gap-bottom"></table>
+						<!-- Print -->
+						<div id="resPrint"></div>
 					</div>
 					<!-- Form Container End -->
 			</div>

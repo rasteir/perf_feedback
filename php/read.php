@@ -5,6 +5,7 @@ $dbname=($conf["DBNAME"]);
 $dbuser=($conf["DBUSER"]);
 $dbpwd=($conf["DBPWD"]);
 
+header('Content-Type: text/plain; charset=utf-8');
 try {
 	$bdd = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $dbuser, $dbpwd);
 } catch (Exception $e) {
@@ -15,6 +16,8 @@ if(isset($_GET['name'])) {
 	$req->execute(array($_GET['name']));
 	$res = $req->fetchAll(PDO::FETCH_ASSOC);
 	$json=json_encode($res);
+	$json = str_replace('\n', " /", $json);
+	$json = str_replace('\r', " /", $json);
 	echo $json;
 }
 ?>

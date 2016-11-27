@@ -66,3 +66,12 @@ article {
 	border-color: #086D97;
 }
 
+table, td {
+    font-size: 12px;
+    border: 1px solid #555;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    text-align: left;
+}
