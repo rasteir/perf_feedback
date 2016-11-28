@@ -15,11 +15,12 @@
 <body>
 	<!-- Navigation Header -->
 	<nav class="navbar navbar-default navbar-fixed-top">
-		<div  class="container-fluid">
+		<div class="container-fluid">
 			<div class="collapse navbar-collapse" id="navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-left">
-					<li class="disabled"><a href="index.html">Give a Feedback</a></li>
-					<li class="disabled"><a href="read.html">View your Feedback</a></li>
+					<li class="disabled"><a href="index.html">Home</a></li>
+					<li class="disabled"><a href="input.html">Give Feedback</a></li>
+					<li class="disabled"><a href="read.html">Reiew Feedback</a></li>
 				</ul>
 			</div>
 		</div>
@@ -29,7 +30,7 @@
 		<div class="container">
 			<header>
 				<div id="startp" class="row">
-					<div  class="col-xs-12 text-center">
+					<div class="col-xs-12 text-center">
 						<img class="logo" src="images/logo.jpg" />
 					</div>
 				</div>
@@ -42,57 +43,10 @@
 			</header>
 			<!-- Action Res  -->
 			<div class="row">
-				<div id="res" class="col-xs-12">
+				<div id="res">
+					<h4 class='bg-success top-gap gap-bottom'><a href="input.html">Give a Feedback to your peer</a></h4>
+					<h4 class='bg-info gap-bottom'><a href="read.html">Review Feedback from your peer</a></h4>
 				</div>
-			</div>
-			<!-- Form  -->
-			<div class="row">
-				<form class="form-horizontal top-gap" method="post" action="php/insert.php">
-					<h4 class="gap-bottom"><span class="underline">Who is your feedback for?</span></h4>
-					<p class="col-xs-12"><strong>Partner Name:</strong>
-					</p>
-					<div class="form-group gap-bottom">
-						<div class="col-xs-9">
-							<input type="text" class="form-control" id="name" name="name" placeholder="Enter your Partner name ex: John Doe" value="">
-						</div>
-					</div>
-
-					<h4 class="gap-bottom"><span class="underline">What is your feedback?</span></h4>
-					<!-- Strengths -->
-					<p class="col-xs-12"><strong>Strenghts/Whoo Moment/Main Accomplishments:</strong>
-					</p>
-
-					<div class="form-group gap-bottom">
-						<div class="col-xs-12">
-							<textarea class="form-control" id="strenghts-comments" name="strenghts-comments" rows="3" placeholder="please fill a 1st item press enter to add a 2nd one, etc..."></textarea>
-						</div>
-					</div>
-					<!-- Improvement -->
-					<p class="col-xs-12"><strong>Opportunities for Improvement or Growth:</strong>
-					</p>
-
-					<div class="form-group gap-bottom">
-						<div class="col-xs-12">
-							<textarea class="form-control" id="improvement-comments" name="improvement-comments" rows="3" placeholder="please fill a 1st item press enter to add a 2nd one, etc..."></textarea>
-						</div>
-					</div>
-					<!-- Comments -->
-					<p class="col-xs-12"><strong>Free Comments:</strong>
-					</p>
-
-					<div class="form-group gap-bottom">
-						<div class="col-sm-12">
-							<textarea class="form-control" id="free-comments" name="free-comments" rows="3"></textarea>
-						</div>
-					</div>
-
-					<!-- Submit -->
-					<div class="form-group gap-bottom">
-						<div class="col-xs-12">
-							<button type="submit" name="submit" class="btn btn-default sborder" id="submit"><strong>Submit Your Feedback</strong></button>
-						</div>
-					</div>
-				</form>
 			</div>
 			<!-- Form Container End -->
 		</div>
