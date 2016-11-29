@@ -1,7 +1,7 @@
 $(document).ready(function () {
 	$("#search").click(function () {
-		name = ($("#name").val()).toLowerCase();
-		$.getJSON("php/read.php", { name: name }, function (json) {
+		peer_mail = ($("#peer_mail").val()).toLowerCase();
+		$.getJSON("php/read.php", { peer_mail: peer_mail }, function (json) {
 			if (typeof json !== 'undefined') {
 				$("#res").html("<h4 class='bg-success top-gap gap-bottom'>You have " + json.length + " merged feedbacks</h4>");
 				$("#resStr").append("<p class='col-xs-12'><strong><u>Strenghts/WoW Moment/Main Accomplishments:</u></strong></p>");
@@ -14,7 +14,7 @@ $(document).ready(function () {
 					$("#tabCom").append("<tr><td>" + json[i].free_comment + "</td></tr>");
 				}
 				window.location.href = "#res";
-				document.getElementById("name").value = "";
+				document.getElementById("peer_mail").value = "";
 			}
 		});
 		return false;

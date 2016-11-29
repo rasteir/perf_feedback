@@ -9,8 +9,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 	<script src="js/bootstrap.js"></script>
-	<script src="js/read.js"></script>
-	<script src="js/print.js"></script>
+	<script src="js/reqfb.js"></script>
 </head>
 
 <body>
@@ -43,44 +42,45 @@
 					</div>
 				</div>
 			</header>
-
-			<!-- Request  -->
+			<!-- Action Res  -->
 			<div class="row">
-				<form class="form-horizontal top-gap" method="post" action="php/insert.php">
-					<h4 class="gap-bottom"><span class="underline">Looking for your feedback?</span></h4>
-					<p class="col-xs-12"><strong>Your email:</strong>
-					</p>
-					<div class="form-group gap-bottom">
-						<div class="col-xs-9">
-							<input type="text" class="form-control" id="peer_mail" name="peer_mail" placeholder="Enter your email ex: john.doe@engie.com" value="">
-						</div>
-					</div>
-					<!-- Search -->
-					<div class="form-group">
-						<div class="col-xs-12">
-							<button type="search" name="search" class="btn btn-default sborder" id="search"><strong>Search Feedback</strong></button>
-						</div>
-					</div>
-					<!-- Action Res  -->
-					<div id="divprint">
-						<div class="row">
-							<div id="res" class="col-xs-12"></div>
-						</div>
-						<!-- Strengths -->
-						<div id="resStr"></div>
-						<table id="tabStr" class="gap-bottom"></table>
-						<!-- Improvement -->
-						<div id="resImp"></div>
-						<table id="tabImp" class="gap-bottom"></table>
-						<!-- Comments -->
-						<div id="resCom"></div>
-						<table id="tabCom" class="gap-bottom"></table>
-						<!-- Print -->
-						<div id="resPrint"></div>
-					</div>
-					<!-- Form Container End -->
+				<div id="res" class="col-xs-12">
+				</div>
 			</div>
-			<!-- end website Container -->
+			<!-- Form  -->
+			<div class="row">
+				<form class="form-horizontal top-gap" method="post" action="php/reqfb.php">
+					<h4 class="gap-bottom"><span class="underline">Ask for a feedback from your peers?</span></h4>
+
+					<!-- user mail -->
+					<p class="col-xs-12"><strong>Your email address:</strong></p>
+					<div class="form-group gap-bottom">
+						<div class="col-xs-12">
+							<input type="text" class="form-control" id="user_mail" name="user_mail" placeholder="firstname.lastname@engie.com" value="">
+						</div>
+					</div>
+
+					<!-- list mail demand -->
+					<h4 class="gap-bottom"><span class="underline">who do you want to ask a feedback?:</span></h4>
+					<p class="col-xs-12"><strong>Your peers email list:</strong></p>
+					<div class="form-group gap-bottom">
+						<div class="col-xs-12">
+							<input type="text" class="form-control" id="peer_mail" name="peer_mail" placeholder="firstname1.lastname1@engie.com; firstname2.lastname2@engie.com; ...."
+								value="">
+						</div>
+					</div>
+
+					<!-- Submit -->
+					<div class="form-group gap-bottom">
+						<div class="col-xs-12">
+							<button type="submit" name="submit" class="btn btn-default sborder" id="submit"><strong>Submit Your Feedback Request</strong></button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<!-- Form Container End -->
+		</div>
+		<!-- end website Container -->
 	</section>
 	<footer class="container">
 		<div class="row">

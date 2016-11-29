@@ -5,13 +5,18 @@ $dbname=($conf["DBNAME"]);
 $dbuser=($conf["DBUSER"]);
 $dbpwd=($conf["DBPWD"]);
 
+$peerlist = $_POST['peer_mail'];
+$peerArray = explode(';', $peerlist);
+
 try {
 	$bdd = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $dbuser, $dbpwd);
 } catch (Exception $e) {
 	die('Database access error : ' . $e->getMessage());
 }
-$req = $bdd->prepare("INSERT INTO gf_feedback (peer_mail,str_comment,imp_comment,free_comment) VALUES (:peer_mail,:str,:imp,:free)");
-$req->execute(array(':peer_mail' => $_POST['peer_mail'],':str' => $_POST['strenghts-comments'],':imp' => $_POST['improvement-comments'],':free' => $_POST['free-comments']));
+foreach ($peerArray as $peermail) {
+	$req = $bdd->prepare("INSERT INTO gf_reqfb (user_mail,peer_mail) VALUES (:user_mail,:peer_mail)");
+	$req->execute(array(':user_mail' => $_POST['user_mail'],':peer_mail' => $peermail));
+}
 echo "1";
 ?>
 

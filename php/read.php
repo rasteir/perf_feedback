@@ -11,9 +11,9 @@ try {
 } catch (Exception $e) {
 	die('Database access error : ' . $e->getMessage());
 }
-if(isset($_GET['name'])) {
-	$req = $bdd->prepare("SELECT str_comment, imp_comment,free_comment FROM gf_feedback WHERE name=?");
-	$req->execute(array($_GET['name']));
+if(isset($_GET['peer_mail'])) {
+	$req = $bdd->prepare("SELECT str_comment, imp_comment,free_comment FROM gf_feedback WHERE peer_mail=?");
+	$req->execute(array($_GET['peer_mail']));
 	$res = $req->fetchAll(PDO::FETCH_ASSOC);
 	$json=json_encode($res);
 	$json = str_replace('\n', " /", $json);
