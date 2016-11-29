@@ -75,3 +75,11 @@ table, td {
 	padding-bottom: 10px;
     text-align: left;
 }
+
+.xstop-gap {
+	margin-top: 30px;
+}
+
+.xsgap-bottom {
+	margin-bottom: 30px;
+}
