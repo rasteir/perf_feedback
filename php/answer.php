@@ -12,7 +12,7 @@ try {
 	die('Database access error : ' . $e->getMessage());
 }
 if(isset($_GET['user_mail'])) {
-	$req = $bdd->prepare("SELECT DISTINCT asker_mail FROM gf_reqfb WHERE responder_mail=?");
+	$req = $bdd->prepare("SELECT DISTINCT asker_mail FROM gf_reqfb WHERE responder_mail=? AND status=0");
 	$req->execute(array($_GET['user_mail']));
 	$res = $req->fetchAll(PDO::FETCH_ASSOC);
 	$json=json_encode($res);
