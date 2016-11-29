@@ -1,7 +1,7 @@
 $(document).ready(function () {
 	$("#search").click(function () {
-		peer_mail = ($("#peer_mail").val()).toLowerCase();
-		$.getJSON("php/read.php", { peer_mail: peer_mail }, function (json) {
+		user_mail = ($("#user_mail").val()).toLowerCase();
+		$.getJSON("php/read.php", { user_mail: user_mail }, function (json) {
 			if (typeof json !== 'undefined') {
 				$("#res").html("<h4 class='bg-success top-gap gap-bottom'>You have " + json.length + " merged feedbacks</h4>");
 				$("#resStr").append("<p class='col-xs-12'><strong><u>Strenghts/WoW Moment/Main Accomplishments:</u></strong></p>");

@@ -12,8 +12,8 @@ try {
 	die('Database access error : ' . $e->getMessage());
 }
 
-$req = $bdd->prepare("INSERT INTO gf_feedback (peer_mail,str_comment,imp_comment,free_comment) VALUES (:peer_mail,:str,:imp,:free)");
-$req->execute(array(':peer_mail' => $_POST['peer_mail'],':str' => $_POST['strenghts-comments'],':imp' => $_POST['improvement-comments'],':free' => $_POST['free-comments']));
+$req = $bdd->prepare("INSERT INTO gf_feedback (responder_mail,asker_mail,str_comment,imp_comment,free_comment) VALUES (:responder_mail,:asker_mail,:str,:imp,:free)");
+$req->execute(array(':responder_mail' => $_POST['user_mail'],':asker_mail' => $_POST['peer_mail'],':str' => $_POST['strenghts_comments'],':imp' => $_POST['improvement_comments'],':free' => $_POST['free_comments']));
 
 if(isset($_POST['user_mail'])) {
 	$asker = $_POST['peer_mail'];
