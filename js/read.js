@@ -4,17 +4,13 @@ $(document).ready(function () {
 		$.getJSON("php/read.php", { user_mail: user_mail }, function (json) {
 			if (typeof json !== 'undefined') {
 				$("#res").html("<h4 class='bg-success top-gap gap-bottom'>You have " + json.length + " merged feedbacks</h4>");
-				$("#resStr").append("<p class='col-xs-12'><strong><u>Strenghts/WoW Moment/Main Accomplishments:</u></strong></p>");
-				$("#resImp").append("<p class='col-xs-12'><strong><u>Opportunities for Improvement or Growth:</u></strong></p>");
-				$("#resCom").append("<p class='col-xs-12'><strong><u>Free Comments:</u></strong></p>");
+				$("#tabStr").append("<th>Feedback Responder</th><th>Strenghts/WoW Moment</th><th>Potential Improvement</th><th>Comments</th>");
 				$("#resPrint").append("<button type='print' name='print' class='btn btn-default sborder' id='print'><strong>Print Feedback</strong></button>");
 				for (i = 0; i < json.length; i++) {
-					$("#tabStr").append("<tr><td>" + json[i].str_comment + "</td></tr>");
-					$("#tabImp").append("<tr><td>" + json[i].imp_comment + "</td></tr>");
-					$("#tabCom").append("<tr><td>" + json[i].free_comment + "</td></tr>");
+					$("#tabStr").append("<tr><td></td><td>" + json[i].str_comment + "</td><td>" + json[i].imp_comment + "</td><td>" + json[i].free_comment + "</td></tr>");
 				}
 				window.location.href = "#res";
-				document.getElementById("peer_mail").value = "";
+				document.getElementById("user_mail").value = "";
 			}
 		});
 		return false;

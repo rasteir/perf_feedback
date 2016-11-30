@@ -67,8 +67,20 @@ article {
 }
 
 table, td {
-    font-size: 12px;
+    font-size: 15px;
     border: 1px solid #555;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    text-align: left;
+}
+
+th {
+    font-size: 15px;
+    border: 1px solid #555;
+	background-color: #086D97;
+	color: white;
 	padding-left: 15px;
 	padding-right: 15px;
 	padding-top: 10px;
